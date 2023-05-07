@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+html, body {
+  font-size: 1.6rem;
+  font-family: 'Lato';
+}
+
+body {
+  background: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.box {
+  background: #FFFFFF;
+  box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.16);
+  border-radius: 1.6rem;
+  margin-top: -1rem;
+  padding: 3.2rem;
+
+  width: fit-content;
+}
+
+#app {
+  display: grid;
+  grid-template-rows: 4rem 1fr;
+  gap: 2.4rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-weight: 700;
+  color: #333;
+}
+
+header i {
+  padding: 1.6rem;
+  border-radius: 50%;
+  color: #666;
+
+  cursor: pointer;
+}
+
+header i:hover {
+  background: #ECE0FD;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+main > div {
+  width: 8.2rem;
+  height: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #666;
+
+  cursor: pointer;
+  transition: all .3s;
+}
+
+main > div:hover {
+  background-color: #ECE0FD;
+  border-radius: .8rem;
+}
+
+main > div.active {
+  background: #6200EE;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+
+  position: relative;
+}
+
+main > div.active::after {
+  content: '';
+  width: .4rem;
+  height: .4rem;
+  background-color: white;
+  border-radius: 50%;
+
+  position: absolute;
+  bottom: .3rem;
+}
