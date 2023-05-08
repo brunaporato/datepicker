@@ -17,9 +17,18 @@ function render() {
   return output
 }
 
+function deselectAllMonths() {
+  const monthDivs = document.querySelectorAll('main div')
+
+  monthDivs.forEach((el) => {
+    el.classList.remove('active')
+  })
+}
+
 
 function selectMonth(e) {
-  e.target.classList.toggle('active')
+  deselectAllMonths()
+  e.target.classList.add('active')
 }
 
 main.onclick = selectMonth
