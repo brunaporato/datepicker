@@ -45,7 +45,15 @@ function nextYear() {
   year.innerHTML = newYear
 }
 
+function pastYear() {
+  newYear = thisYear - 1
+  thisYear = newYear
+
+  year.innerHTML = newYear
+}
+
 plusYears.onclick = nextYear
+lessYears.onclick = pastYear
 
 main.onclick = selectMonth
 
