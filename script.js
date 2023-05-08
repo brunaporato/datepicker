@@ -3,8 +3,15 @@ const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', '
 let thisMonth = months[new Date().getMonth()]
 
 const main = app.querySelector('main')
+const plusYears = app.querySelector('#plus')
+const lessYears = app.querySelector('#less')
+const year = app.querySelector('header span')
 
 let output = ''
+let thisYear = new Date().getFullYear()
+let newYear
+
+
 
 function render() {
 
@@ -31,7 +38,16 @@ function selectMonth(e) {
   e.target.classList.add('active')
 }
 
+function nextYear() {
+  newYear = thisYear + 1
+  thisYear = newYear
+
+  year.innerHTML = newYear
+}
+
+plusYears.onclick = nextYear
+
 main.onclick = selectMonth
 
 main.innerHTML = render()
-app.querySelector('header span').innerHTML = new Date().getFullYear()
+year.innerHTML = thisYear
